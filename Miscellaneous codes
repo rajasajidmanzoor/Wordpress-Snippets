@@ -1,0 +1,22 @@
+##Filter Custom Taxonomy based on custom meta
+
+	$profile_categories = get_terms( array(
+                   'taxonomy' => 'profile-category',
+                   'hide_empty' => false,                   
+                   
+                    'orderby' =>  'meta_value_num',
+                      'order' =>  'ASC',
+                      'hide_empty' =>  false,
+                      'hierarchical' =>  false,
+                      'meta_query' => [[
+                        'key' => 'profile_category_order',
+                        'type' => 'NUMERIC',
+                      ]],
+) );
+
+#Get Current Plugin Directory
+
+ $img= plugin_dir_url( __FILE__ ).'../images/cover-2.png';
+ 
+ 
+           
