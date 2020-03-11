@@ -19,4 +19,21 @@
  $img= plugin_dir_url( __FILE__ ).'../images/cover-2.png';
  
  
+ // Print Product Variations
+ $product = wc_get_product( $id );
+	 $variations = $product->get_available_variations();
+
+	 echo '<pre>';
+	 print_r($variations);
+
+	 
+	 
+	 foreach($variations as $variation){
+		 echo 'Organization'.$variation['attributes']['attribute_organization'].'<br/>';
+		 echo 'ID'.$variation['variation_id'].'<br/>';
+		echo 'Price Html'.$variation['price_html'].'<br/>'; 
+	 }
+	 //die('DIE');
+	 echo '</pre>';
+ 
            
